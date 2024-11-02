@@ -1,8 +1,10 @@
 import './App.css';
 import Header from './components/header/Header';
-//import ListaUsers from './pages/ExibirUsuarios/ListaUsers';
+import ListaUsers from './pages/ExibirUsuarios/ListaUsers';
+//import NovoUser from './pages/NovoUsuario/NovoUser';
+//import EditarUsers from './pages/EditarUsuarios/EditarUsers';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import NovoUser from './pages/NovoUsuario/NovoUser';
+
 
 
 
@@ -11,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <NovoUser />
+      <ListaUsers />
     </div>
   );
 }

@@ -1,0 +1,129 @@
+.EditarUsers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+.tela-edicao{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 30vw;
+    max-width: fit-content;
+    min-height: 80vh;
+    max-height: fit-content;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 2px 5px 12px rgba(0, 0, 0, 0.8); 
+
+}
+
+#cabecalho-edicao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 35vw;
+    max-width:70vw;
+    min-height: 10vh;
+    max-height:40vh;
+}
+#TituloPainel-edicao{
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+#SubTituloPainel-edicao{
+    text-align: left;
+    margin-left: 80px;
+}
+#textoExplicacao-edicao{
+    text-align: left;
+    margin-left: 80px;
+    font-size: larger;
+}
+
+.form-editar {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.EditarUser-input{
+    margin: 10px;
+}
+
+label{
+    margin: 10px;
+}
+input{
+    border: solid 1px;
+    border-radius: 7px ;
+    width: 13vw;
+    height: 3vh;
+    padding: 10px;
+}
+select{
+    border: solid 1px;
+    border-radius: 7px ;
+    width: 14vw;
+    height: 6vh;
+    padding: 10px;
+}
+
+
+#btn-edicao{
+    margin: 10px;
+    border-radius: 10px;
+    width: 5vw;
+    height: 4.5vh;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+#btn-edicao:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4); 
+    transition: all 0.5s ease-in-out;
+}
+.btn-Editar{
+    background-color: orange;
+    color: wheat;
+    border: none;
+    font-size: medium;
+    font-weight: bolder;
+    transition: all 0.5s ease-in-out;
+}
+.btn-Editar:hover{
+    background-color: orangered;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+.btn-Editar:active{
+    transform: scale(0.1);
+    transition: all 0.5s ease-in-out;
+}
+.btn-Fechar{
+    background-color: white;
+    border: orange solid 1px;
+    color: orange;
+    font-size: medium;
+    font-weight: bolder;
+    transition: all 0.5s ease-in-out;
+}
+.btn-Fechar:hover{
+    background-color: orange;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+.btn-Fechar:active{
+    transform: scale(0.1);
+    transition: all 0.5s ease-in-out;
+}

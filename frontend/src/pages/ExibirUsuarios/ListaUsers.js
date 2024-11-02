@@ -1,13 +1,15 @@
 import './ListaUsers.css'
+import React, { useState } from 'react'
+import EditarUsers from '../../components/EditarUsuarios/EditarUsers'
 
 export default function ListaUsers() {
 
-
+    const [abrirModal, setAbrirModal] = useState(false)
 
     return (
         <div className="ListaUsers-page">
             <h1 id='TituloPainel'> <i class="bi bi-person" style={{marginRight: '20px'}}></i>Painel de clientes</h1> 
-            <hr style={{width: '90%', opacity: '0.5'}}/> 
+            <hr style={{width: '80%', opacity: '0.5'}}/> 
             <span id='cabecalho'>
                 <section id='textosCabecalho'>
                     <h2 id='SubTituloPainel'> Listagem de usuários</h2>
@@ -33,9 +35,10 @@ export default function ListaUsers() {
                     </section>
 
                     <section>
-                        <button className='btn-editar'><h4>Editar</h4></button>
+                        <button className='btn-editar' onClick={() => setAbrirModal(true)}><h4>Editar</h4></button>
                     </section>
                 </div>
+
                 <div className="Usuario-card">
                     <section>
                         <h3>Nome do cliente</h3>
@@ -55,6 +58,7 @@ export default function ListaUsers() {
                         <button className='btn-editar'><h4>Editar</h4></button>
                     </section>
                 </div>
+
                 <div className="Usuario-card">
                     <section>
                         <h3>Nome do cliente</h3>
@@ -77,6 +81,7 @@ export default function ListaUsers() {
             </div>
         <p className="footer-msg">Exibindo X clientes</p>
 
+        <EditarUsers isOpen={abrirModal} setIsOpen={() => setAbrirModal(!abrirModal)} />
 
         </div>
     )
