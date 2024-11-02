@@ -19,6 +19,6 @@ db.serialize(() => {
 //             ('Omar Omais pobre', 'email@teste.com.br', '429.554.312-00', '(11)9999-9999', 'Desativado')`);
 });
 
-console.log('Criado com sucesso!')
+console.log('Rodando SQL com sucesso!')
 
 module.exports = db;
