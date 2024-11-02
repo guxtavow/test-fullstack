@@ -1,0 +1,109 @@
+.ListaUsers-page{
+    border: solid;
+    min-width: fit-content;
+    max-width: 100vw;
+    min-height: 89.3vh;
+    max-height:100vh;
+}
+
+#cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 40vw;
+    max-width:90vw;
+    min-height: 10vh;
+    max-height:40vh;
+}
+#TituloPainel{
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+#SubTituloPainel{
+    text-align: left;
+    margin-left: 80px;
+}
+#textoExplicacao{
+    text-align: left;
+    margin-left: 80px;
+    font-size: larger;
+}
+
+.btn-novoCliente{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6vw;
+    height: 4vh;
+    border-radius: 8px;
+    background-color: orange;
+    border: none;
+    color:wheat;
+    font-size: medium;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.btn-novoCliente:hover{
+    background-color: orangered;
+    transition: all 0.5s ease-in-out;
+}
+.btn-novoCliente:active{
+    transform: scale(0.5);
+    transition: all 0.5s ease-in-out;
+}
+
+.ListaUsers-lista{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50vh;
+    max-height: 50vh;
+    overflow: auto; /* ativa scrolling  arrumar dps*/
+}
+.Usuario-card{
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    width: 90vw;
+    transition: all 0.5s ease-in-out;
+    margin: 10px;
+}
+.Usuario-card:hover{
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.01);
+    transition: all 0.5s ease-in-out;
+}
+
+
+.btn-editar{
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: orange solid 1px;
+    color: orange;
+    border-radius: 8px;
+    background-color: white;
+    width: 5vw;
+    height: 4vh;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out
+}
+.btn-editar:hover{
+    background-color: orange;
+    color: white;
+    transition: all 0.3s ease-in-out
+}
+.btn-editar:active{
+    transform: scale(0.5);
+    transition: all 0.3s ease-in-out
+}
+
+.footer-msg{
+    text-align: left;
+    margin-left: 80px;
+}
