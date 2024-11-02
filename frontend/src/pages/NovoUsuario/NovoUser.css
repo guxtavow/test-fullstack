@@ -1,0 +1,115 @@
+.NovoUser-page{
+    min-width: fit-content;
+    max-width: 100vw;
+    min-height: 89.3vh;
+    max-height:100vh;
+}
+#cabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 40vw;
+    max-width:90vw;
+    min-height: 10vh;
+    max-height:40vh;
+}
+#TituloPainel{
+    text-align: left;
+    margin-left: 80px;
+    margin-top: 80px;
+}
+#SubTituloPainel{
+    text-align: left;
+    margin-left: 80px;
+}
+#textoExplicacao{
+    text-align: left;
+    margin-left: 80px;
+    font-size: larger;
+}
+
+
+.NovoUser-forms{
+    display: flex;
+    justify-content: first baseline;
+    max-width: 40vw;
+    margin: 10px;
+    margin-left: 4vw;
+    padding: 10px;
+}
+
+.form-cadastro{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.NovoUser-input{
+    margin: 10px;
+}
+label{
+    margin: 10px;
+}
+input{
+    border: solid 1px;
+    border-radius: 7px ;
+    width: 13vw;
+    height: 3vh;
+    padding: 10px;
+}
+select{
+    border: solid 1px;
+    border-radius: 7px ;
+    width: 14vw;
+    height: 6vh;
+    padding: 10px;
+
+}
+
+#btn-cadastro{
+    margin: 10px;
+    border-radius: 10px;
+    width: 5vw;
+    height: 4.5vh;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+#btn-cadastro:hover{
+    transform: scale(1.05);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4); 
+    transition: all 0.5s ease-in-out;
+}
+.btn-criar{
+    background-color: orange;
+    color: wheat;
+    border: none;
+    font-size: medium;
+    font-weight: bolder;
+    transition: all 0.5s ease-in-out;
+}
+.btn-criar:hover{
+    background-color: orangered;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+.btn-criar:active{
+    transform: scale(0.1);
+    transition: all 0.5s ease-in-out;
+}
+.btn-voltar{
+    background-color: white;
+    border: orange solid 1px;
+    color: orange;
+    font-size: medium;
+    font-weight: bolder;
+    transition: all 0.5s ease-in-out;
+}
+.btn-voltar:hover{
+    background-color: orange;
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+.btn-voltar:active{
+    transform: scale(0.1);
+    transition: all 0.5s ease-in-out;
+}
