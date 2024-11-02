@@ -1,14 +1,57 @@
 import './ListaUsers.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import EditarUsers from '../../components/EditarUsuarios/EditarUsers'
+import { ApiListaClientes } from '../../services/apiListaClientes'
 
 export default function ListaUsers() {
 
     const [abrirModal, setAbrirModal] = useState(false)
+    const [clientes, setClientes] = useState([])
+
+    const ListarClientes = async() => {
+        const response = await ApiListaClientes()
+        setClientes(response.clientes || []);
+        console.log(response)
+    }
+
+    const StatusClientes = (status) => {
+        if (status === 'Ativo') {
+            return (
+                <>
+                    <i className="bi bi-circle-fill" style={{ color: 'green', marginRight: '8px' }}></i> {status}
+                </>
+            );
+        } else if (status === 'Inativo') {
+            return (
+                <>
+                    <i className="bi bi-circle-fill" style={{ color: 'red', marginRight: '8px' }}></i> {status}
+                </>
+            );
+        } else if (status === 'Aguardando') {
+            return (
+                <>
+                    <i className="bi bi-circle-fill" style={{ color: 'yellow', marginRight: '8px' }}></i> {status}
+                </>
+            );
+        } else {
+            return (
+                <>
+                    <i className="bi bi-circle-fill" style={{ color: 'lightgray', marginRight: '8px' }}></i> {status}
+                </>
+            );
+        }
+    };
+    
+
+
+    useEffect(()=>{
+        ListarClientes()
+    }, [])
+    
 
     return (
         <div className="ListaUsers-page">
-            <h1 id='TituloPainel'> <i class="bi bi-person" style={{marginRight: '20px'}}></i>Painel de clientes</h1> 
+            <h1 id='TituloPainel'> <i className="bi bi-person" style={{marginRight: '20px'}}></i>Painel de clientes</h1> 
             <hr style={{width: '80%', opacity: '0.5'}}/> 
             <span id='cabecalho'>
                 <section id='textosCabecalho'>
@@ -19,67 +62,30 @@ export default function ListaUsers() {
             </span>
 
             <div className="ListaUsers-lista">
-                <div className="Usuario-card">
-                    <section>
-                        <h3>Nome do cliente</h3>
-                        <p>email@teste.com.br</p>
-                    </section>
+                {clientes.map(cliente => (
+                    <div className="Usuario-card" key={cliente.id} style={{opacity: cliente.status === 'Desativado' ? '0.7' : '1'}}>
+                        <section>
+                            <h3>{cliente.nome}</h3>
+                            <p>{cliente.email}</p>
+                        </section>
 
-                    <section>
-                        <h3>123.456.789-00</h3>
-                        <p>(11)9999-9999</p>
-                    </section>
+                        <section>
+                            <h3>{cliente.cpf}</h3>
+                            <p>{cliente.telefone}</p>
+                        </section>
 
-                    <section>
-                        <i className="bi bi-circle-fill" style={{color: 'green', marginRight: '8px'}}></i>Ativo
-                    </section>
+                        <section>
+                            <span id='status'>{StatusClientes(cliente.status)}</span>
+                        </section>
 
-                    <section>
-                        <button className='btn-editar' onClick={() => setAbrirModal(true)}><h4>Editar</h4></button>
-                    </section>
-                </div>
-
-                <div className="Usuario-card">
-                    <section>
-                        <h3>Nome do cliente</h3>
-                        <p>email@teste.com.br</p>
-                    </section>
-
-                    <section>
-                        <h3>123.456.789-00</h3>
-                        <p>(11)9999-9999</p>
-                    </section>
-
-                    <section>
-                        <i className="bi bi-circle-fill" style={{color: 'green', marginRight: '8px'}}></i>Ativo
-                    </section>
-
-                    <section>
-                        <button className='btn-editar'><h4>Editar</h4></button>
-                    </section>
-                </div>
-
-                <div className="Usuario-card">
-                    <section>
-                        <h3>Nome do cliente</h3>
-                        <p>email@teste.com.br</p>
-                    </section>
-
-                    <section>
-                        <h3>123.456.789-00</h3>
-                        <p>(11)9999-9999</p>
-                    </section>
-
-                    <section>
-                        <i className="bi bi-circle-fill" style={{color: 'green', marginRight: '8px'}}></i>Ativo
-                    </section>
-
-                    <section>
-                        <button className='btn-editar'><h4>Editar</h4></button>
-                    </section>
-                </div>
+                        <section>
+                            <button className='btn-editar' onClick={() => setAbrirModal(true)}><h4>Editar</h4></button>
+                        </section>
+                    </div>
+                ))}
+                
             </div>
-        <p className="footer-msg">Exibindo X clientes</p>
+        <p className="footer-msg">Exibindo {clientes.length} clientes</p>
 
         <EditarUsers isOpen={abrirModal} setIsOpen={() => setAbrirModal(!abrirModal)} />
 
