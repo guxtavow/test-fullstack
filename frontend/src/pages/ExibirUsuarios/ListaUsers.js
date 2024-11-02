@@ -84,7 +84,7 @@ export default function ListaUsers() {
 
                         <section>
                             <h3>{cliente.cpf}</h3>
-                            <p>{cliente.telefone}</p>
+                            <p>{cliente.celular}</p>
                         </section>
 
                         <section>
@@ -100,7 +100,7 @@ export default function ListaUsers() {
             </div>
         <p className="footer-msg">Exibindo {clientes.length} clientes</p>
 
-        <EditarUsers isOpen={abrirModal} setIsOpen={() => setAbrirModal(!abrirModal)} cliente={clienteSelecionado} />
+        <EditarUsers isOpen={abrirModal} setIsOpen={() => setAbrirModal(!abrirModal)} refreshClientes={ListarClientes} cliente={clienteSelecionado} />
 
         </div>
     )

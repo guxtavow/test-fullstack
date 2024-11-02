@@ -3,7 +3,7 @@ import './EditarUsers.css'
 import InputMask from 'react-input-mask'
 import { ApiEditarClientes} from '../../services/apiEditarClientes'
 
-export default function EditarUsers({isOpen, setIsOpen, cliente}) {
+export default function EditarUsers({isOpen, setIsOpen, cliente, refreshClientes}) {
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
     const [cpf, setCpf] = useState('')
@@ -56,6 +56,7 @@ export default function EditarUsers({isOpen, setIsOpen, cliente}) {
 
             alert('Dados atualizados com sucesso!')
             setErro('')
+            refreshClientes();
             setIsOpen(false)
         }catch(err){
             console.log('Erro na atualização de usuario: ',err)
