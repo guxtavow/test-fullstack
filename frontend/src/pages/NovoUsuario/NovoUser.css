@@ -3,6 +3,7 @@
     max-width: 100vw;
     min-height: 89.3vh;
     max-height:100vh;
+    overflow: hidden;
 }
 #cabecalho{
     display: flex;
@@ -13,11 +14,13 @@
     min-height: 10vh;
     max-height:40vh;
 }
+
 #TituloPainel{
     text-align: left;
     margin-left: 80px;
     margin-top: 80px;
 }
+
 #SubTituloPainel{
     text-align: left;
     margin-left: 80px;

@@ -2,6 +2,7 @@ import './ListaUsers.css'
 import React, { useEffect, useState } from 'react'
 import EditarUsers from '../../components/EditarUsuarios/EditarUsers'
 import { ApiListaClientes } from '../../services/apiListaClientes'
+import { useNavigate } from 'react-router-dom'
 
 export default function ListaUsers() {
 
@@ -12,6 +13,11 @@ export default function ListaUsers() {
         const response = await ApiListaClientes()
         setClientes(response.clientes || []);
         console.log(response)
+    }
+
+    const navegar = useNavigate()
+    const Links = (path) => {
+        navegar(path)
     }
 
     const StatusClientes = (status) => {
@@ -58,12 +64,12 @@ export default function ListaUsers() {
                     <h2 id='SubTituloPainel'> Listagem de usuários</h2>
                     <p id='textoExplicacao'> Escolha um cliente para visualizar os detalhes</p>     
                 </section>
-                <button className='btn-novoCliente'>Novo Cliente</button>
+                <button className='btn-novoCliente' onClick={() => Links('/Criar-Usuario')}>Novo Cliente</button>
             </span>
 
             <div className="ListaUsers-lista">
                 {clientes.map(cliente => (
-                    <div className="Usuario-card" key={cliente.id} style={{opacity: cliente.status === 'Desativado' ? '0.7' : '1'}}>
+                    <div className="Usuario-card" key={cliente.id} style={{opacity: cliente.status === 'Desativado' ? '0.6' : '1'}}>
                         <section>
                             <h3>{cliente.nome}</h3>
                             <p>{cliente.email}</p>
