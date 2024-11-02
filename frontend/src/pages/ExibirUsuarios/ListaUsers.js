@@ -8,6 +8,7 @@ export default function ListaUsers() {
 
     const [abrirModal, setAbrirModal] = useState(false)
     const [clientes, setClientes] = useState([])
+    const [clienteSelecionado, setClienteSelecionado] = useState()
 
     const ListarClientes = async() => {
         const response = await ApiListaClientes()
@@ -53,6 +54,12 @@ export default function ListaUsers() {
     useEffect(()=>{
         ListarClientes()
     }, [])
+
+    const ModalConfig = (cliente) => {
+        setAbrirModal(true)
+        setClienteSelecionado(cliente)
+        console.log(clienteSelecionado)
+    }
     
 
     return (
@@ -85,7 +92,7 @@ export default function ListaUsers() {
                         </section>
 
                         <section>
-                            <button className='btn-editar' onClick={() => setAbrirModal(true)}><h4>Editar</h4></button>
+                            <button className='btn-editar' onClick={() => ModalConfig(cliente)}><h4>Editar</h4></button>
                         </section>
                     </div>
                 ))}
@@ -93,7 +100,7 @@ export default function ListaUsers() {
             </div>
         <p className="footer-msg">Exibindo {clientes.length} clientes</p>
 
-        <EditarUsers isOpen={abrirModal} setIsOpen={() => setAbrirModal(!abrirModal)} />
+        <EditarUsers isOpen={abrirModal} setIsOpen={() => setAbrirModal(!abrirModal)} cliente={clienteSelecionado} />
 
         </div>
     )
