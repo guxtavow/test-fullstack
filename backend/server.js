@@ -5,7 +5,7 @@ const cors = require('cors')
 const PORT = 3001;
 
 
-app.use((req,res,next) => { //METODO CORS
+app.use((req,res,next) => { //METODO CORS PARA O SQL
     res.header('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
     next()
@@ -64,12 +64,12 @@ app.put('/atualizarCliente/:id', async (req, res) => { // ROTA PARA ATUALIZAR OS
             return res.json({ 'erro': 'CPF já cadastrado' })
         }
 
-        const cpfApenasNumeros = cpf.replace(/\D/g, '') //verifica se o cpf tem 11 dígitos numericos
+        const cpfApenasNumeros = cpf.replace(/\D/g, '') 
         if (!/^\d{11}$/.test(cpfApenasNumeros)) {
             return res.status(400).json({ erro: 'CPF inválido. Deve conter exatamente 11 dígitos.' })
         }
 
-        const celularApenasNumeros = celular.replace(/\D/g, '') //verifica se o telefone tem 11 dígitos numericos
+        const celularApenasNumeros = celular.replace(/\D/g, '')
         if (!/^\d{11}$/.test(celularApenasNumeros)) {
             return res.status(400).json({ erro: 'Telefone inválido. Deve conter exatamente 11 dígitos (incluindo DDD).' })
         }

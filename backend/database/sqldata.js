@@ -12,11 +12,6 @@ db.serialize(() => {
         status TEXT
     )`);
     
-//     db.run(`INSERT INTO clientes (nome, email, cpf, telefone, status)
-//             VALUES ('Claudio Almiro', 'email@teste.com.br', '123.456.789-00', '(11)9999-9999', 'Ativo'), 
-//             ('Maria Amais braba', 'email@teste.com.br', '987.654.321-00', '(11)9999-9999', 'Inativo'), 
-//             ('Gusta Omais pica', 'email@teste.com.br', '988.654.321-00', '(11)9999-9999', 'Aguardando'),
-//             ('Omar Omais pobre', 'email@teste.com.br', '429.554.312-00', '(11)9999-9999', 'Desativado')`);
 });
 
 console.log('Rodando SQL com sucesso!')
